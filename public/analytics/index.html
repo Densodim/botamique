@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>analytics</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+    <h1>
+        <img src="../img/Logo.png">
+    </h1>
+    <nav>
+        <ol>
+            <li class="nav-link"><a href="#" id="home">Главная</a></li>
+            <li class="nav-link"><a href="#" id="analytics">Аналитика</a></li>
+        </ol>
+    </nav>
+    <div>
+        <img src="../img/ava.png">
+    </div>
+</header>
+
+<section class="search">
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Поиск прибора...">
+        <div class="icon-container">
+            <img src="../img/uploaded/Vector.png">
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="device-header">
+            <div class="device-info">
+                <span class="device-name">pH-метр Mettler-Toledo International, Inc. SevenCompact S220</span>
+                <span class="device-id">S1.4.1I4-9.001 • 00-024004</span>
+            </div>
+            <div class="device-status">
+                <select class="styled-select" id="workTypeSelect">
+                    <option value="all" selected>Все</option>
+                    <option value="work" >В работе</option>
+                    <option value="calibration">Калибровка</option>
+                    <option value="measurement">Измерение</option>
+                    <option value="preparation">Подготовка</option>
+                </select>
+                <button class="favorite-button">❤️</button>
+                <button class="favorite-button" id="openModalButton">⚙️</button>
+            </div>
+        </div>
+
+        <button class="work-button" id="workButton">Работа прибора</button>
+
+        <div class="device-controls" >
+            <div class="date-range" id="elementHide">
+                <input type="date" id="startDate">
+                <span>→</span>
+                <input type="date" id="endDate">
+            </div>
+
+            <div class="pdf-controls">
+                <button class="pdf-button">
+                    <img src="../img/time.png" alt="icon time">
+                </button>
+                <button class="pdf-button">
+                    <span>СОХРАНИТЬ PDF</span>
+                    <span class="span-button">⋮</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="filter-buttons">
+            <button data-period="day">День</button>
+            <button data-period="week">Неделя</button>
+            <button data-period="2weeks" class="active">2 недели</button>
+            <button data-period="month">Месяц</button>
+            <button data-period="3months">3 месяца</button>
+            <button data-period="6months">Полгода</button>
+        </div>
+
+        <div class="device-table">
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Начало</th>
+                    <th>Тип работ</th>
+                    <th>Работы</th>
+                    <th>Результат</th>
+                    <th></th>
+                    <th>Пользователь</th>
+                </tr>
+                </thead>
+                <tbody id="analyticsBody">
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+</section>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span id="closeModalButton" class="close-button">&times;</span>
+        <h2>Setting</h2>
+        <div>
+            <input type="checkbox" id="hideElementCheckbox">
+            Hide date period selector
+        </div>
+    </div>
+</div>
+
+<script type="module" src="../../libs/analytics.js" defer></script>
+
+</body>
+
+</html>
