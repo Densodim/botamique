@@ -38,7 +38,7 @@ let devices = [
 ];
 
 app.use(express.static(path.join(__dirname, '')));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 app.get('/api/devices', (req, res) => {
@@ -46,7 +46,7 @@ app.get('/api/devices', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.post('/api/devices/:id/toggle', (req, res) => {
