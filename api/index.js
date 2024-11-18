@@ -38,7 +38,7 @@ let devices = [
 ];
 
 app.use(express.static(path.join(__dirname, '')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 
 app.get('/api/devices', (req, res) => {
