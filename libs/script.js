@@ -1,11 +1,13 @@
+'use strict';
 import {goToAnalytics, goToHome} from './navigation.js'
 import {Links} from "./links.js";
 
-document.getElementById('analytics').addEventListener('click', goToAnalytics);
 document.getElementById('home').addEventListener('click', goToHome);
 Links();
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('analytics').addEventListener('click', goToAnalytics);
+
     loadDevices();
 });
 
@@ -30,7 +32,6 @@ function renderDevices(devices) {
         const row = document.createElement('div');
         row.classList.add('device-row');
 
-        // Название устройства
         const nameDiv = document.createElement('div');
         nameDiv.classList.add('device-name');
         nameDiv.textContent = device.name;
@@ -43,7 +44,6 @@ function renderDevices(devices) {
         imageDiv.appendChild(img);
 
 
-        // Статус устройства (с выпадающим списком)
         const statusDiv = document.createElement('div');
         statusDiv.classList.add('status');
         const statusSelect = document.createElement('select');
@@ -57,7 +57,6 @@ function renderDevices(devices) {
         statusSelect.addEventListener('change', () => updateDeviceStatus(device.id, statusSelect.value));
         statusDiv.appendChild(statusSelect);
 
-        // Иконка уведомлений
         const notificationDiv = document.createElement('div');
         notificationDiv.classList.add('action');
         const notificationSpan = document.createElement('span');
@@ -66,7 +65,6 @@ function renderDevices(devices) {
         notificationSpan.addEventListener('click', () => toggleNotification(device.id, notificationSpan));
         notificationDiv.appendChild(notificationSpan);
 
-        // Добавляем ячейки в строку
         row.appendChild(imageDiv);
         row.appendChild(nameDiv);
         row.appendChild(statusDiv);
