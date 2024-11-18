@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "api/handler.js",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "destination": "/api"
     }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/handler.js" },
-    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
