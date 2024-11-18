@@ -37,7 +37,6 @@ let devices = [
     {id: 4, name: 'Коагулометр Tcoag, KC 4 Delta', status: 'Свободен', notification: false, image: '/img/tcoag.png'}
 ];
 
-app.use('/libs', express.static(path.join(__dirname, '../libs')));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 
